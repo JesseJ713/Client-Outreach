@@ -8,7 +8,7 @@ const User = mongoose.model("users");
 // each instance of utilizing Google OAuth
 // retrieving client ID and Secret
 // when data is received, send user back to callbackURL
-// second argument is pulling data from newly authorized user
+// done argument refers to passport's method of knowing when to move on with auth process
 passport.use(
   new GoogleStrategy(
     {
@@ -19,8 +19,11 @@ passport.use(
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleId: profile.id }).then((existingUser) => {
         if (existingUser) {
+          done(null, existingUser);
         } else {
-          new User({ googleId: profile.id }).save();
+          new User({ googleId: profile.id })
+            .save()
+            .then((user) => done(null, user));
         }
       });
     }
