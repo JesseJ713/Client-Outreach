@@ -5,6 +5,12 @@ const keys = require("../config/keys");
 
 const User = mongoose.model("users");
 
+// assigning user unique cookie
+// user.id is mongo identifier
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
 // each instance of utilizing Google OAuth
 // retrieving client ID and Secret
 // when data is received, send user back to callbackURL
