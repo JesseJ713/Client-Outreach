@@ -11,6 +11,12 @@ passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
+passport.deserializeUser((id, done) => {
+  User.findById(id).then((user) => {
+    done(null, user);
+  });
+});
+
 // each instance of utilizing Google OAuth
 // retrieving client ID and Secret
 // when data is received, send user back to callbackURL
