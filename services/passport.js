@@ -11,6 +11,7 @@ passport.serializeUser((user, done) => {
   done(null, user.id);
 });
 
+// utilizes cookie to search database for matching user
 passport.deserializeUser((id, done) => {
   User.findById(id).then((user) => {
     done(null, user);
