@@ -28,6 +28,9 @@ app.use(passport.session());
 // returning authRoutes function and immediately invoking app parameter
 require("./routes/authRoutes")(app);
 
+// returning billingRoutes function and immediately invoking app parameter
+require("./routes/billingRoutes")(app);
+
 // allowing heroku to find an available port or localhost5000
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
