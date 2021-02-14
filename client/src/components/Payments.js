@@ -6,7 +6,6 @@ import StripeCheckout from "react-stripe-checkout";
 // .. after Stripe authenticates card information
 class Payments extends Component {
   render() {
-    debugger;
     return (
       <StripeCheckout
         amount={500}
