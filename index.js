@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cookieSession = require("cookie-session");
 const passport = require("passport");
+const bodyParser = require("body-parser");
 const keys = require("./config/keys");
 require("./models/User");
 require("./services/passport");
@@ -11,6 +12,7 @@ mongoose.connect(keys.mongoURI);
 // storing express methods into variable
 const app = express();
 
+app.use(bodyParser.json());
 // telling express to use cookies
 // cookies have a maxAge of 30 days
 // cookies have random encryption from config
