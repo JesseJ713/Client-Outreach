@@ -33,6 +33,20 @@ require("./routes/authRoutes")(app);
 // returning billingRoutes function and immediately invoking app parameter
 require("./routes/billingRoutes")(app);
 
+// Routing in Production logic
+if (process.env.NODE_ENV === "production") {
+  // Express will serve up production assets
+  // i.e. main.js or main.css
+  app.use(express.static("client/build"));
+
+  // Express will serve up index.html
+  // if it doesn't recognize route
+  const path = require("path");
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  });
+}
+
 // allowing heroku to find an available port or localhost5000
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
