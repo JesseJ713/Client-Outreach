@@ -21,7 +21,7 @@ passport.deserializeUser((id, done) => {
 // each instance of utilizing Google OAuth
 // retrieving client ID and Secret
 // when data is received, send user back to callbackURL
-// done argument refers to passport's method of knowing when to move on with auth process
+// done argument refers to passport's method of knowing when to move forward with auth process
 passport.use(
   new GoogleStrategy(
     {
