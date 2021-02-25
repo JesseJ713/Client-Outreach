@@ -34,6 +34,9 @@ require("./routes/authRoutes")(app);
 // returning billingRoutes function and immediately invoking app parameter
 require("./routes/billingRoutes")(app);
 
+// returning surveyRoutes function and immediately invoking app parameter
+require("./routes/surveyRoutes")(app);
+
 // Routing in Production logic
 if (process.env.NODE_ENV === "production") {
   // Express will serve up production assets
