@@ -13,6 +13,7 @@ class Mailer extends helper.Mail {
 
     this.addContent(this.body);
     this.addClickTracking();
+    this.addRecipients();
   }
 
   formatAddresses(recipients) {
@@ -28,6 +29,15 @@ class Mailer extends helper.Mail {
     trackingSettings.setClickTracking(clickTracking);
 
     this.addTrackingSettings(trackingSettings);
+  }
+
+  addRecipients() {
+    const personalize = new.helper.Personalization();
+
+    this.recipients.forEach((recipient) => {
+      personalize.addTo(recipient);
+    });
+    this.addPersonalization(personalize);
   }
 }
 
