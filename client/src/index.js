@@ -8,6 +8,10 @@ import reduxThunk from "redux-thunk";
 import App from "./components/App";
 import reducers from "./reducers";
 
+// Development Only Axios Helpers!
+import axios from "axios";
+window.axios = axios;
+
 // Redux store that is accessible to every component
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
