@@ -6,7 +6,7 @@
 
 Client Outreach is the solution for your business's survey needs. Create your survey, and share with your customer base. Feedback results are easy to consume by both business and client.
 
-![Homepage Screen](./docs/homescreen.png)
+![Homepage Screen](./docs/homescreen.PNG)
 
 ## Table of Contents
 
@@ -78,4 +78,3 @@ Client Outreach is licensed under the [MIT](https://opensource.org/licenses/MIT)
 <a href="https://www.linkedin.com/in/jesse-jackson-atx/">![Badge](https://img.shields.io/badge/LinkedIn--3480eb)</a> <a href="https://github.com/JesseJ713">![Badge](https://img.shields.io/badge/Github--40c256)</a>
 
 </td>
-<td style="border: none">
